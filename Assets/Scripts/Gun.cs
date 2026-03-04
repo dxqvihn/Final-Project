@@ -20,6 +20,7 @@ public class Gun : MonoBehaviour
     {
         RotateGun();
         Shoot();
+        Reload();
     }
     void RotateGun()
     {
@@ -50,5 +51,12 @@ public class Gun : MonoBehaviour
         }
 
     }
-
+    void Reload()
+    {
+        if (Input.GetMouseButtonDown(1) && currentAmmo < maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+        }
+            
+    }
 }
