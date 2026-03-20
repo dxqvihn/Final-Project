@@ -5,7 +5,7 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameObject[] enemies; // mang chua enemy trong game
     [SerializeField] private Transform[] spawnPoints; // diem ngau nhien se sinh ra enemy
-    [SerializeField] private float timeBetweenSpawns = 2f; // khoang thoi gian giua hai lan sinh enemy
+    [SerializeField] private float timeBetweenSpawns = 2.5f; // khoang thoi gian giua hai lan sinh enemy
 
     void Start()
     {
