@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     [SerializeField] private float maxHp = 100f;
     private float currentHp;
     [SerializeField] private Image hpBar;
+    [SerializeField] private GameManager gameManager;
 
 
      void Awake()
@@ -28,6 +29,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         MovePlayer();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManager.PauseGameMenu();
+        }
     }
 
     void MovePlayer()
@@ -74,7 +79,7 @@ public class Player : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        gameManager.GameOverMenu();
     }
     private void UpdateHpBar()
     {

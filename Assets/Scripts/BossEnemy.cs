@@ -10,6 +10,7 @@ public class BossEnemy : Enemy
     [SerializeField] private GameObject miniEnemy; // chua mini enemy
     [SerializeField] private float skillCooldown = 1f; // thoi gian hoi chieu
     private float nextSkillTime = 0f; // tinh toan khi nao dung skill tiep
+    [SerializeField] private GameObject usbPrefabs;
 
 
     protected override void Update() // test 
@@ -19,6 +20,12 @@ public class BossEnemy : Enemy
         {
             SuDungSkill();
         }
+    }
+
+    protected override void Die()
+    {
+        Instantiate(usbPrefabs, transform.position, Quaternion.identity);
+        base.Die();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
